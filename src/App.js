@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import ComboBox from './components/ComboBox/ComboBox';
+import Calculator from './components/Calculator/Calculator';
+
+const fruits = [
+  '🍎 Apple',
+  '🍌 Banana',
+  '🫐 Blueberry',
+  '🥭 Mango'
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='combo-box-container'>
+        <h1>ComboBox</h1>
+        <ComboBox fruits={fruits} />
+      </div>
+      <div className='calc-container'>
+        <h1>Calculator</h1>
+        <Calculator />
+      </div>
     </div>
   );
 }

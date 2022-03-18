@@ -1,0 +1,58 @@
+.combo-box {
+    padding: 10px 0;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.list-open {
+    border: #51a5eb solid 3px;
+}
+
+.list-closed {
+    background-color: #DDDDDD;
+}
+
+.combo-box form {
+    width: 100%;
+}
+
+.combo-box input {
+    font-size: inherit;
+    border: none;
+    background-color: transparent;
+    width: 80%;
+    padding: 0 10px;
+}
+
+.combo-box input:focus {
+    outline: none;
+}
+
+.combo-box button {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    width: 10%;
+}
+
+.combo-box-container button img {
+    width: 12px;
+}
+
+.fruit-dropdown-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.fruit-dropdown-list li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+.fruit-dropdown-list li:last-child {
+    padding-bottom: 0;
+}
+
+.fruit-dropdown-list li:hover {
+    background-color: #EEEEEE;
+}
