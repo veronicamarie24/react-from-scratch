@@ -1,0 +1,18 @@
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #b138a1;
+    background-color: #EEEEEE;
+    outline: 1px solid #082b3f;
+    margin-top: 1px;
+    width: 100px;
+    height: 100px;
+}
+
+.board {
+    display: flex;
+    flex-direction: row;
+}
