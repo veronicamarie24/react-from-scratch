@@ -12,14 +12,13 @@ const Square = ({ value, onClick }) => {
 const Board = () => {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [isX, setIsX] = useState(true);
-
-    useEffect(() => {
-        if (!squares.includes(null)) {
-            calculateWinner();
-        }
-    }, [squares])
+    const winner = calculateWinner();
 
     function handleClickSquare(squareIndex) {
+        if (winner || squares[squareIndex]) {
+            return;
+        }
+
         squares[squareIndex] = isX ? 'X' : 'O';
         setSquares(squares);
         setIsX(!isX);
@@ -36,7 +35,15 @@ const Board = () => {
             [0, 4, 8],
             [2, 4, 6]
         ];
+        
+        for (let i = 0; i < winConditions.length; i++) {
+            const [a, b, c] = winConditions[i];
+            if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c]) {
+                return squares[a];
+            }
+        }
 
+        return null;
     }
 
     return (
@@ -58,7 +65,7 @@ const Board = () => {
                     <Square value={squares[8]} onClick={() => {handleClickSquare(8)}} />
                 </div>
             </div>
-            <p className='turn'>{isX ? 'X' : 'O'}'s Turn</p>
+            {winner ? <p className='turn'>Winner is {winner}!</p> : <p className='turn'>{isX ? 'X' : 'O'}'s Turn</p>}
         </div>
     )
 }
